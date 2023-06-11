@@ -1,0 +1,1 @@
+Arquivo sobre como usar o Git
