@@ -1,0 +1,57 @@
+CREATE DATABASE nome do banco ;
+USE nome;
+CREATE TABLE nome(
+coluna1 tipo de dado,
+coluna2 tipo de dado,
+coluna3 tipo de dado);
+FOREIGN KEY (id que está nessa tabela. MAS se refere a outra tabela) REFERENCES
+tabela estrangeira (id dela);
+ALTER TABLE nome tabela ADD nome coluna tipo de dado;
+OBS: Notas e preço, por exemplo, são do tipo decimal(5,2)
+ALTER TABLE nome tabela MODIFY COLUMN nome coluna tipo de dado;
+ALTER TABLE nome tabela DROP COLUMN nome coluna;
+INSERT INTO nome da tabela (colunas da tabela) VALUES
+(aqui insere valores entre aspas (menos números) e separados por vírgula),
+(aqui insere valores entre aspas (menos números) e separados por vírgula),
+(aqui insere valores entre aspas (menos números) e separados por vírgula);
+#quando o id é auto_increment ele não entra no insert. Já irá aparecer no select
+automaticamente
+SELECT * FROM nome da tabela;
+SELECT * FROM tabela
+WHERE coluna tal = ‘tal coisa’
+ORDER BY id DESC;
+SELECT * FROM tabela
+WHERE coluna tal = ‘tal coisa’
+ORDER BY id ASC;
+SELECT *FROM nome da tabela
+WHERE coluna BETWEEN numero AND numero;
+SELECT DISTINCT coluna FROM tabela;
+CREATE INDEX idx_nome ON tabela(coluna);
+DROP CREATE INDEX idx_nome ON;
+SELECT * FROM nome tabela
+WHERE coluna = 'João' AND coluna <> 'Ricardo'
+SELECT * FROM nome tabela
+WHERE coluna LIKE ‘M%’;
+SELECT * FROM nome tabela
+WHERE coluna LIKE ‘%M’;
+DATETIME “2023-12-07”
+SELECT MIN(idade) AS Menor_idade_alunos FROM alunos;
+SELECT MAX(idade) AS Maior_idade_alunos FROM alunos;
+SELECT AVG(idade) AS Media_idades_alunos FROM alunos;
+SELECT COUNT(*) AS Qtdd_alunos FROM alunos;
+SELECT SUM(idade) AS Soma_idades_alunos FROM alunos;
+UPDATE nome tabela
+SET nome coluna = alguma coisa
+WHERE coluna = alguma coisa ;
+DELETE FROM tabela
+WHERE coluna = alguma coisa ;
+SELECT tabela1.coluna, tab2.coluna,
+FROM tabela1
+INNER JOIN tabela2 ON tab1.chave primaria = tab2.chave estrangeira;
+SELECT tabela1.coluna, tab2.coluna,
+FROM tabela1
+LEFT JOIN tabela2 ON tab1.chave primaria = tab2.chave estrangeira;
+SELECT tabela1.coluna, tab2.coluna,
+FROM tabela1
+RIGHT JOIN tabela2 ON tab1.chave primaria = tab2.chave estrangeira;
+/* Quando tab não tiver chave estrangeira, usar o id dela na tab1 e tab2 *
